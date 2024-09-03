@@ -1,8 +1,8 @@
 <template>
     <div class="w-full h-auto justify-center items-center bg-[#F5F6FA]">
-        <div class="w-full flex flex-col justify-center items-center px-4 py-8">
+        <div class="w-full flex flex-col  px-4 py-8">
 
-            <div class="bg-white px-4 py-4">
+            <div class="bg-white px-4 py-4 rounded-xl">
                 <div class="flex ">
                     <img src="/public/avatars/image-amyrobson.png" alt="avatar" class="w-8 h-8">
                     <p class="pl-4 text-textcol ">
@@ -47,6 +47,168 @@
                     </div>
                 </div>
             </div>
+
+            <div class="bg-white px-4 py-4 mt-4 rounded-xl">
+                <div class="flex ">
+                    <img src="/public/avatars/image-maxblagun.png" alt="avatar" class="w-8 h-8">
+                    <p class="pl-4 text-textcol ">
+                        maxblagun <span class="text-textdes pl-4">2 weeks ago</span>
+                    </p>
+                </div>
+                <div class=" pt-4 text-textdes">
+                    <p>
+                        {{ msg1 }}
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div class="bg-bgcol flex rounded-xl mt-4">
+                            <p class="px-6 py-2">
+                                <button @click="conteur++" key="bA" class="pr-4 text-btn">+</button>
+                                <span class="text-num pr-4"> {{ conteur }}</span>
+                                <button @click="conteur--" key="bB" class=" text-btn">-</button>
+                            </p>
+                        </div>
+                        <div class="flex items-center mt-4">
+                            <div v-if="!visible" class="flex items-center">
+                                <img src="/public/icon-reply.svg" alt="" class="mx-auto">
+                                <button @click="visible = true" class="text-num p-2">
+                                    Reply
+                                </button>
+                            </div>
+                            <div v-else class="flex flex-col items-center">
+                                <div class="flex items-center">
+                                    <img src="/public/icon-delete.svg" alt="">
+                                    <button class="p-2 text-sup">
+                                        Delete
+                                    </button>
+                                    <img src="/public/icon-edit.svg" alt="" class="pl-3">
+                                    <button class="p-2 text-num ">
+                                        Edit
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="border-2 w-1 h-[530px]  mt-4 absolute"></div>
+            </div>
+
+            <div class="bg-white px-4 py-4 mt-4 ml-4 rounded-xl">
+                <div class="flex ">
+                    <img src="/public/avatars/image-ramsesmiron.png" alt="avatar" class="w-8 h-8">
+                    <p class="pl-4 text-textcol ">
+                        ramsesmiron <span class="text-textdes pl-4">1 week ago</span>
+                    </p>
+                </div>
+                <div class=" pt-4 text-textdes">
+                    <p>
+                        <span class="text-num">@maxblagun</span>
+                        {{ msg2 }}
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div class="bg-bgcol flex rounded-xl mt-4">
+                            <p class="px-6 py-2">
+                                <button @click="conteur++" key="bA" class="pr-4 text-btn">+</button>
+                                <span class="text-num pr-4"> {{ conteur }}</span>
+                                <button @click="conteur--" key="bB" class=" text-btn">-</button>
+                            </p>
+                        </div>
+                        <div class="flex items-center mt-4">
+                            <div v-if="!visible" class="flex items-center">
+                                <img src="/public/icon-reply.svg" alt="" class="mx-auto">
+                                <button @click="visible = true" class="text-num p-2">
+                                    Reply
+                                </button>
+                            </div>
+                            <div v-else class="flex flex-col items-center">
+                                <div class="flex items-center">
+                                    <img src="/public/icon-delete.svg" alt="">
+                                    <button class="p-2 text-sup">
+                                        Delete
+                                    </button>
+                                    <img src="/public/icon-edit.svg" alt="" class="pl-3">
+                                    <button class="p-2 text-num ">
+                                        Edit
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white px-4 py-4 mt-4 ml-4 rounded-xl">
+                <div class="flex ">
+                    <img src="/public/avatars/image-juliusomo.png" alt="avatar" class="w-8 h-8">
+                    <p class="pl-4 text-textcol ">
+                        juliusomo <span class="text-white bg-num p-1 text-xs ml-2"> you</span> <span
+                            class="text-textdes pl-4">1 month ago</span>
+                    </p>
+                </div>
+                <div class=" pt-4 text-textdes">
+                    <p>
+                        <span class="text-num ">@ramsesmiron</span>
+                        {{ msg3 }}
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <div class="bg-bgcol flex rounded-xl mt-4">
+                            <p class="px-6 py-2">
+                                <button @click="conteur++" key="bA" class="pr-4 text-btn">+</button>
+                                <span class="text-num pr-4"> {{ conteur }}</span>
+                                <button @click="conteur--" key="bB" class=" text-btn">-</button>
+                            </p>
+                        </div>
+                        <div class="flex items-center mt-4">
+                            <div v-if="!visible" class="flex items-center">
+                                <img src="/public/icon-reply.svg" alt="" class="mx-auto">
+                                <button @click="visible = true" class="text-num p-2">
+                                    Reply
+                                </button>
+                            </div>
+                            <div v-else class="flex flex-col items-center">
+                                <div class="flex items-center">
+                                    <img src="/public/icon-delete.svg" alt="">
+                                    <button class="p-2 text-sup">
+                                        Delete
+                                    </button>
+                                    <img src="/public/icon-edit.svg" alt="" class="pl-3">
+                                    <button class="p-2 text-num ">
+                                        Edit
+                                    </button>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" text-textdes bg-white mt-4 px-4 py-4 rounded-xl">
+                <div class="">
+                    <input type="text" placeholder="Add a comment..." class="w-full rounded-xl h-24 pl-4 border pb-10">
+                </div>
+                <div class="flex justify-between pt-4">
+                    <div>
+                        <img src="/public/avatars/image-juliusomo.png" alt="" class="h-8 w-8">
+                    </div>
+                    <div>
+                        <button class="text-white bg-num py-3 px-8 rounded-lg">
+                            SEND
+                        </button>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </template>
@@ -59,7 +221,9 @@ export default {
             conteur: 1,
             visible: false,
             msg: "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design, and the responsiveness at various breakpoints works really well.",
-
+            msg1: "Woah, your peoject looks awesome! How long have you been coding for? I'm still new, but think I want to drive into Reaxt as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
+            msg2: "If you're still new, I'd recommend focusing on the fundamentals of Html, CSS, and JS before considerinf React. It-s very tempting to jump ahead but lay a solid foundation first.",
+            msg3: "I couldn-t agree more with this. Everything moves so fast and it alxays seems like everyone knows the newest libary/framework.but the fundamentals are what stay constant."
         }
     },
     methods() {
