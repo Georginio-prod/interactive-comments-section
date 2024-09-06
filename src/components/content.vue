@@ -135,34 +135,36 @@
                 <div class="border-2 w-1 h-[530px]  mt-4 absolute lg:ml-12 z-10"></div>
             </div>
 
-            <div class="bg-white px-4 py-4 mt-4 ml-4 rounded-xl lg:ml-24">
-                <div class="flex ">
+            <div class="bg-white px-4 py-4 mt-4 ml-4 rounded-xl lg:ml-24 lg:h-40">
+                <div class="flex pl-16 ">
                     <img src="/public/avatars/image-ramsesmiron.png" alt="avatar" class="w-8 h-8">
                     <p class="pl-4 text-textcol ">
                         ramsesmiron <span class="text-textdes pl-4">1 week ago</span>
                     </p>
                 </div>
                 <div class=" pt-4 text-textdes">
-                    <p>
+                    <p class="pl-16 pr-6">
                         <span class="text-num">@maxblagun</span>
                         {{ msg2 }}
                     </p>
-                    <div class="flex justify-between items-center">
-                        <div class="bg-bgcol flex rounded-xl mt-4">
-                            <p class="px-6 py-2">
-                                <button @click="conteur2++" key="bA" class="pr-4 text-btn">+</button>
-                                <span class="text-num pr-4"> {{ conteur2 }}</span>
-                                <button @click="conteur2--" key="bB" class=" text-btn">-</button>
+                    <div class="flex justify-between items-center ">
+                        <div
+                            class="bg-bgcol flex rounded-xl mt-4 lg:flex lg:flex-col lg:items-center lg:justify-center lg:transform lg:-translate-y-[135px]">
+                            <p class="px-6 py-2 lg:flex lg:flex-col lg:px-4 lg:items-center lg:justify-center">
+                                <button @click="conteur2++" key="bA" class="pr-4 text-btn lg:pr-0">+</button>
+                                <span class="text-num pr-4 lg:pr-0">{{ conteur2 }}</span>
+                                <button @click="conteur2--" key="bB" class="text-btn lg:pr-0">-</button>
                             </p>
                         </div>
+
                         <div class="flex items-center mt-4">
-                            <div v-if="!visible2" class="flex items-center">
+                            <div v-if="!visible2" class="flex items-center lg:transform lg:-translate-y-[166px]">
                                 <img src="/public/icon-reply.svg" alt="" class="mx-auto">
                                 <button @click="visible2 = true" class="text-num p-2">
                                     Reply
                                 </button>
                             </div>
-                            <div v-else class="flex flex-col items-center">
+                            <div v-else class="flex flex-col items-center lg:transform lg:-translate-y-[166px]">
                                 <div class="flex items-center">
                                     <img src="/public/icon-delete.svg" alt="">
                                     <button class="p-2 text-sup">
@@ -182,8 +184,8 @@
                 </div>
             </div>
 
-            <div class="bg-white px-4 py-4 mt-4 ml-4 rounded-xl lg:ml-24">
-                <div class="flex ">
+            <div class="bg-white px-4 py-4 mt-4 ml-4 rounded-xl lg:ml-24 lg:h-40">
+                <div class="flex lg:pl-16 ">
                     <img src="/public/avatars/image-juliusomo.png" alt="avatar" class="w-8 h-8">
                     <p class="pl-4 text-textcol ">
                         juliusomo <span class="text-white bg-num p-1 text-xs ml-2"> you</span> <span
@@ -191,26 +193,27 @@
                     </p>
                 </div>
                 <div class=" pt-4 text-textdes">
-                    <p>
+                    <p class="lg:pl-16">
                         <span class="text-num ">@ramsesmiron</span>
                         {{ msg3 }}
                     </p>
                     <div class="flex justify-between items-center">
-                        <div class="bg-bgcol flex rounded-xl mt-4">
-                            <p class="px-6 py-2">
-                                <button @click="conteur3++" key="bA" class="pr-4 text-btn">+</button>
-                                <span class="text-num pr-4"> {{ conteur3 }}</span>
-                                <button @click="conteur3--" key="bB" class=" text-btn">-</button>
+                        <div
+                            class="bg-bgcol flex rounded-xl mt-4 lg:flex lg:flex-col lg:items-center lg:justify-center lg:transform lg:-translate-y-[135px]">
+                            <p class="px-6 py-2 lg:flex lg:flex-col lg:px-4 lg:items-center lg:justify-center">
+                                <button @click="conteur3++" key="bA" class="pr-4 text-btn lg:pr-0">+</button>
+                                <span class="text-num pr-4 lg:pr-0">{{ conteur3 }}</span>
+                                <button @click="conteur3--" key="bB" class="text-btn lg:pr-0">-</button>
                             </p>
                         </div>
                         <div class="flex items-center mt-4">
-                            <div v-if="!visible3" class="flex items-center">
+                            <div v-if="!visible3" class="flex items-center lg:transform lg:-translate-y-[166px]">
                                 <img src="/public/icon-reply.svg" alt="" class="mx-auto">
                                 <button @click="visible3 = true" class="text-num p-2">
                                     Reply
                                 </button>
                             </div>
-                            <div v-else class="flex flex-col items-center">
+                            <div v-else class="flex flex-col items-center lg:transform lg:-translate-y-[166px]">
                                 <div class="flex items-center">
                                     <img src="/public/icon-delete.svg" alt="">
                                     <button class="p-2 text-sup">
