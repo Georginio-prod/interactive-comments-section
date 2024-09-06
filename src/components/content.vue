@@ -10,7 +10,7 @@
                     </p>
                 </div>
                 <div class=" pt-4 text-textdes ">
-                    <p class="lg:px-16">
+                    <p class="lg:pl-16">
                         {{ msg }}
                     </p>
                     <div class="flex justify-between items-center">
@@ -58,7 +58,7 @@
                     </p>
                 </div>
                 <div class=" pt-4 text-textdes">
-                    <p class="lg:px-16">
+                    <p class="lg:pl-16">
                         {{ msg1 }}
                     </p>
                     <div class="flex justify-between items-center">
@@ -132,18 +132,18 @@
             </div>
 
             <div class="relative">
-                <div class="border-2 w-1 h-[530px]  mt-4 absolute lg:ml-12 z-10"></div>
+                <div class="border-2 w-1 h-[530px]  mt-4 absolute lg:ml-12 z-10 lg:h-96"></div>
             </div>
 
             <div class="bg-white px-4 py-4 mt-4 ml-4 rounded-xl lg:ml-24 lg:h-40">
-                <div class="flex pl-16 ">
+                <div class="flex lg:pl-16 ">
                     <img src="/public/avatars/image-ramsesmiron.png" alt="avatar" class="w-8 h-8">
                     <p class="pl-4 text-textcol ">
-                        ramsesmiron <span class="text-textdes pl-4">1 week ago</span>
+                        ramsesmiron <span class="text-textdes pl-1">1 week ago</span>
                     </p>
                 </div>
                 <div class=" pt-4 text-textdes">
-                    <p class="pl-16 pr-6">
+                    <p class="lg:pl-16 pr-6">
                         <span class="text-num">@maxblagun</span>
                         {{ msg2 }}
                     </p>
@@ -188,8 +188,8 @@
                 <div class="flex lg:pl-16 ">
                     <img src="/public/avatars/image-juliusomo.png" alt="avatar" class="w-8 h-8">
                     <p class="pl-4 text-textcol ">
-                        juliusomo <span class="text-white bg-num p-1 text-xs ml-2"> you</span> <span
-                            class="text-textdes pl-4">1 month ago</span>
+                        juliusomo <span class="text-white bg-num p-1 text-xs "> you</span> <span
+                            class="text-textdes">2 days ago</span>
                     </p>
                 </div>
                 <div class=" pt-4 text-textdes">
@@ -235,8 +235,8 @@
 
             <div class="text-textdes bg-white mt-4 px-4 py-4 rounded-xl z-30 lg:flex lg:gap-4">
                 <!-- Avatar en premier sur lg -->
-                <div class="flex items-center lg:order-1 translate-y-36 lg:translate-y-0 ">
-                    <img src="/public/avatars/image-juliusomo.png" alt="" class="h-8 w-8 ">
+                <div class="flex items-center lg:order-1 translate-y-36 lg:translate-y-0 lg:flex lg:items-start lg:justify-start">
+                    <img src="/public/avatars/image-juliusomo.png" alt="" class="h-8 w-8 lg:w-auto">
                 </div>
 
                 <!-- Input en deuxième sur lg -->
@@ -245,8 +245,8 @@
                 </div>
 
                 <!-- Bouton en dernier sur lg -->
-                <div class="flex items-center pt-4 lg:order-3 float-right">
-                    <button class="text-white bg-num py-3 px-8 rounded-lg" type="submit">
+                <div class="flex items-center pt-4 lg:order-3 float-right lg:justify-start lg:items-start lg:-translate-y-3">
+                    <button class="text-white bg-num py-3 px-8 rounded-lg " type="submit">
                         SEND
                     </button>
                 </div>
