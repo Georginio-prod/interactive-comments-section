@@ -81,23 +81,36 @@
                                 <div class="flex items-center">
                                     <!-- Bouton Delete avec popup -->
                                     <img src="/public/icon-delete.svg" alt="">
-                                    <button class="p-2 text-sup" @click="isPopupOpen = true">Delete</button>
+                                    <button class="p-2 text-sup" @click="openDeletePopup">Delete</button>
 
                                     <!-- Popup Delete -->
-                                    <div v-if="isPopupOpen"
-                                        class="fixed inset-0 bg-red-300 bg-opacity-50 flex justify-center items-center">
-                                        <div class="bg-white p-9 rounded-3xl shadow-lg max-w-md w-full text-center">
-                                            <p>Are you sure you want to delete?</p>
-                                            <button @click="isPopupOpen = false"
-                                                class="mt-4 bg-red-500 text-white py-2 px-4 rounded">
-                                                Bye
-                                            </button>
+                                    <div v-if="isDeletePopupOpen"
+                                        class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center lg:justify-center lg:items-center lg:flex">
+                                        <div
+                                            class="bg-white p-9 rounded-3xl shadow-lg max-w-md w-full lg:w-96 lg:p-12">
+                                            <p class="text-lg font-bold mb-4">Delete Comment</p>
+                                            <p class="mb-8">
+                                                Are you sure you want to delete this comment? This will remove the
+                                                comment and can’t be undone.
+                                            </p>
+                                            <!-- Boutons en flex -->
+                                            <div class="flex gap-3">
+                                                <button @click="closeDeletePopup"
+                                                    class="bg-gray-500 text-white py-2 px-7 rounded">
+                                                    NO, CANCEL
+                                                </button>
+                                                <button @click="deleteComment"
+                                                    class="bg-red-500 text-white py-2 px-7 rounded ">
+                                                    YES, DELETE
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
 
+
                                     <!-- Bouton Edit -->
                                     <img src="/public/icon-edit.svg" alt="" class="pl-3">
-                                    <button class="p-2 text-num" @click="showEditCard = true">Edit</button>
+                                    <button class="p-2 text-num" @click="openEditCard">Edit</button>
                                 </div>
                             </div>
                         </div>
@@ -280,6 +293,7 @@ export default {
             visible1: false,
             showEditCard: false,
             commentSent: false,
+            isDeletePopupOpen: false,
 
             conteur2: 4,
             visible2: false,
@@ -301,8 +315,25 @@ export default {
                 this.commentSent = true; // Rendre visible la zone du commentaire envoyé
                 this.showEditCard = false; // Optionnel: masquer la carte d'édition après envoi
             }
+        },
+        openDeletePopup() {
+            this.isDeletePopupOpen = true;
+            this.showEditCard = false; // Fermer le popup Edit si ouvert
+        },
+        closeDeletePopup() {
+            this.isDeletePopupOpen = false;
+        },
+        deleteComment() {
+            // Ajoutez ici la logique pour supprimer le commentaire
+            console.log("Comment deleted");
+            this.isDeletePopupOpen = false;
+        },
+        openEditCard() {
+            this.showEditCard = true;
+            this.isDeletePopupOpen = false; // Fermer le popup Delete si ouvert
         }
     }
+
 
 }
 
