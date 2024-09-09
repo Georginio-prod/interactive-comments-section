@@ -25,89 +25,62 @@
                                 <span class="text-num pr-4 lg:pr-0">{{ conteur }}</span>
                                 <button @click="conteur--" key="bB" class="text-btn lg:pr-0">-</button>
                             </p>
-                        </div>                           
+                        </div>
 
-                            <div class="flex items-center mt-4">
-                                <!-- Bouton Reply -->
-                                <div v-if="!visible" class="flex items-center lg:transform lg:-translate-y-[166px]">
-                                    <img src="/public/icon-reply.svg" alt="" class="mx-auto">
-                                    <button @click="visible = true" class="text-num p-2">Reply</button>
-                                </div>
-
-                                <!-- Boutons Delete et Edit -->
-                                <div v-else class="flex flex-col items-center lg:transform lg:-translate-y-[166px]">
-                                    <div class="flex items-center">
-                                        <!-- Bouton Delete avec popup -->
-                                        <img src="/public/icon-delete.svg" alt="">
-                                        <button class="p-2 text-sup" @click="openDeletePopup">Delete</button>
-
-                                        <!-- Popup Delete -->
-                                        <div v-if="isDeletePopupOpen"
-                                            class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-                                            <div
-                                                class="bg-white p-9 rounded-3xl shadow-lg max-w-md w-full lg:w-96 lg:p-12">
-                                                <p class="text-lg font-bold mb-4">Delete Comment</p>
-                                                <p class="mb-8">
-                                                    Are you sure you want to delete this comment? This will remove the
-                                                    comment and can’t be undone.
-                                                </p>
-                                                <!-- Boutons en flex -->
-                                                <div class="flex gap-3">
-                                                    <button @click="closeDeletePopup"
-                                                        class="bg-gray-500 text-white py-2 px-7 rounded">
-                                                        NO, CANCEL
-                                                    </button>
-                                                    <button @click="deleteComment"
-                                                        class="bg-red-500 text-white py-2 px-7 rounded">
-                                                        YES, DELETE
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <!-- Bouton Edit -->
-                                        <img src="/public/icon-edit.svg" alt="" class="pl-3">
-                                        <button class="p-2 text-num" @click="openEditCard">Edit</button>
-                                    </div>
-                                </div>
+                      
+                           
+                        <div class="flex items-center mt-4">
+                            <!-- Bouton Reply -->
+                            <div v-if="!visible" class="flex items-center lg:transform lg:-translate-y-[166px]">
+                                <img src="/public/icon-reply.svg" alt="" class="mx-auto">
+                                <button @click="visible = true" class="text-num p-2">Reply</button>
                             </div>
 
-                        
-                    </div>
+                            <!-- Boutons Delete et Edit -->
+                            <div v-else class="flex flex-col items-center lg:transform lg:-translate-y-[166px]">
+                                <div class="flex items-center">
+                                    <!-- Bouton Delete avec popup -->
+                                    <img src="/public/icon-delete.svg" alt="">
+                                    <button class="p-2 text-sup" @click="">Delete</button>
+
+                                    <!-- Popup Delete -->
+                                    <div v-if="isDeletePopupOpen"
+                                        class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                                        <div class="bg-white p-9 rounded-3xl shadow-lg max-w-md w-full lg:w-96 lg:p-12">
+                                            <p class="text-lg font-bold mb-4">Delete Comment</p>
+                                            <p class="mb-8">
+                                                Are you sure you want to delete this comment? This will remove the
+                                                comment and can’t be undone.
+                                            </p>
+                                            <!-- Boutons en flex -->
+                                            <div class="flex gap-3">
+                                                <button @click=""
+                                                    class="bg-gray-500 text-white py-2 px-7 rounded">
+                                                    NO, CANCEL
+                                                </button>
+                                                <button @click=""
+                                                    class="bg-red-500 text-white py-2 px-7 rounded">
+                                                    YES, DELETE
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <!-- Bouton Edit -->
+                                    <img src="/public/icon-edit.svg" alt="" class="pl-3">
+                                    <button class="p-2 text-num" @click="">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                    
                 </div>
             </div>
-            <div>
-                <!-- Carte de commentaire avec l'input -->
-                <div v-if="showEditCard" class="text-textdes bg-white mt-4 px-4 py-4 rounded-xl z-30 lg:flex lg:gap-4">
-                    <!-- Avatar en premier sur lg -->
-                    <div
-                        class="flex items-center lg:order-1 translate-y-36 lg:translate-y-0 lg:flex lg:items-start lg:justify-start">
-                        <img src="/public/avatars/image-juliusomo.png" alt="" class="h-8 w-8 lg:w-auto">
-                    </div>
-
-                    <!-- Input en deuxième sur lg -->
-                    <div class="lg:order-2 w-full">
-                        <textarea placeholder="Add a comment..." class="w-full rounded-xl h-24 pl-4 border pb-10"
-                            v-model="text">
-                        </textarea>
-                    </div>
-
-                    <!-- Bouton en dernier sur lg -->
-                    <div
-                        class="flex items-center pt-4 lg:order-3 float-right lg:justify-start lg:items-start lg:-translate-y-3">
-                        <button class="text-white bg-num py-3 px-8 rounded-lg" @click="sendComment">
-                            SEND
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Zone où le message envoyé sera affiché -->
-                <div v-if="commentSent" class="mt-4 p-4 bg-white rounded-lg">
-                    <p>{{ text }}</p>
-                </div>
+               
             </div>
 
             <div class="bg-white px-4 py-4 mt-4 rounded-xl lg:pt-6 lg:h-40">
@@ -242,83 +215,29 @@
                         </div>
 
                         <div class="flex items-center mt-4">
-                                <!-- Bouton Reply -->
-                                <div v-if="!visible" class="flex items-center lg:transform lg:-translate-y-[166px]">
-                                    <img src="/public/icon-reply.svg" alt="" class="mx-auto">
-                                    <button @click="visible = true" class="text-num p-2">Reply</button>
-                                </div>
-
-                                <!-- Boutons Delete et Edit -->
-                                <div v-else class="flex flex-col items-center lg:transform lg:-translate-y-[166px]">
-                                    <div class="flex items-center">
-                                        <!-- Bouton Delete avec popup -->
-                                        <img src="/public/icon-delete.svg" alt="">
-                                        <button class="p-2 text-sup" @click="openDeletePopup">Delete</button>
-
-                                        <!-- Popup Delete -->
-                                        <div v-if="isDeletePopupOpen"
-                                            class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-                                            <div
-                                                class="bg-white p-9 rounded-3xl shadow-lg max-w-md w-full lg:w-96 lg:p-12">
-                                                <p class="text-lg font-bold mb-4">Delete Comment</p>
-                                                <p class="mb-8">
-                                                    Are you sure you want to delete this comment? This will remove the
-                                                    comment and can’t be undone.
-                                                </p>
-                                                <!-- Boutons en flex -->
-                                                <div class="flex gap-3">
-                                                    <button @click="closeDeletePopup"
-                                                        class="bg-gray-500 text-white py-2 px-7 rounded">
-                                                        NO, CANCEL
-                                                    </button>
-                                                    <button @click="deleteComment"
-                                                        class="bg-red-500 text-white py-2 px-7 rounded">
-                                                        YES, DELETE
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <!-- Bouton Edit -->
-                                        <img src="/public/icon-edit.svg" alt="" class="pl-3">
-                                        <button class="p-2 text-num" @click="openEditCard">Edit</button>
-                                    </div>
-                                </div>
+                            <div v-if="!visible2" class="flex items-center lg:transform lg:-translate-y-[166px]">
+                                <img src="/public/icon-reply.svg" alt="" class="mx-auto">
+                                <button @click="visible2 = true" class="text-num p-2">
+                                    Reply
+                                </button>
                             </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <!-- Carte de commentaire avec l'input -->
-                <div v-if="showEditCard" class="text-textdes bg-white mt-4 px-4 py-4 rounded-xl z-30 lg:flex lg:gap-4 lg:ml-24">
-                    <!-- Avatar en premier sur lg -->
-                    <div
-                        class="flex items-center lg:order-1 translate-y-36 lg:translate-y-0 lg:flex lg:items-start lg:justify-start">
-                        <img src="/public/avatars/image-juliusomo.png" alt="" class="h-8 w-8 lg:w-auto">
-                    </div>
+                            <div v-else class="flex flex-col items-center lg:transform lg:-translate-y-[166px]">
+                                <div class="flex items-center">
+                                    <img src="/public/icon-delete.svg" alt="">
+                                    <button class="p-2 text-sup">
+                                        Delete
+                                    </button>
+                                    <img src="/public/icon-edit.svg" alt="" class="pl-3">
+                                    <button class="p-2 text-num ">
+                                        Edit
+                                    </button>
+                                </div>
 
-                    <!-- Input en deuxième sur lg -->
-                    <div class="lg:order-2 w-full">
-                        <textarea placeholder="Add a comment..." class="w-full rounded-xl h-24 pl-4 border pb-10"
-                            v-model="text">
-                        </textarea>
-                    </div>
 
-                    <!-- Bouton en dernier sur lg -->
-                    <div
-                        class="flex items-center pt-4 lg:order-3 float-right lg:justify-start lg:items-start lg:-translate-y-3">
-                        <button class="text-white bg-num py-3 px-8 rounded-lg" @click="sendComment">
-                            SEND
-                        </button>
-                    </div>
-                </div>
+                            </div>
 
-                <!-- Zone où le message envoyé sera affiché -->
-                <div v-if="commentSent" class="mt-4 p-4 bg-white rounded-lg">
-                    <p>{{ text }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -345,83 +264,29 @@
                             </p>
                         </div>
                         <div class="flex items-center mt-4">
-                                <!-- Bouton Reply -->
-                                <div v-if="!visible" class="flex items-center lg:transform lg:-translate-y-[166px]">
-                                    <img src="/public/icon-reply.svg" alt="" class="mx-auto">
-                                    <button @click="visible = true" class="text-num p-2">Reply</button>
-                                </div>
-
-                                <!-- Boutons Delete et Edit -->
-                                <div v-else class="flex flex-col items-center lg:transform lg:-translate-y-[166px]">
-                                    <div class="flex items-center">
-                                        <!-- Bouton Delete avec popup -->
-                                        <img src="/public/icon-delete.svg" alt="">
-                                        <button class="p-2 text-sup" @click="openDeletePopup">Delete</button>
-
-                                        <!-- Popup Delete -->
-                                        <div v-if="isDeletePopupOpen"
-                                            class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-                                            <div
-                                                class="bg-white p-9 rounded-3xl shadow-lg max-w-md w-full lg:w-96 lg:p-12">
-                                                <p class="text-lg font-bold mb-4">Delete Comment</p>
-                                                <p class="mb-8">
-                                                    Are you sure you want to delete this comment? This will remove the
-                                                    comment and can’t be undone.
-                                                </p>
-                                                <!-- Boutons en flex -->
-                                                <div class="flex gap-3">
-                                                    <button @click="closeDeletePopup"
-                                                        class="bg-gray-500 text-white py-2 px-7 rounded">
-                                                        NO, CANCEL
-                                                    </button>
-                                                    <button @click="deleteComment"
-                                                        class="bg-red-500 text-white py-2 px-7 rounded">
-                                                        YES, DELETE
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <!-- Bouton Edit -->
-                                        <img src="/public/icon-edit.svg" alt="" class="pl-3">
-                                        <button class="p-2 text-num" @click="openEditCard">Edit</button>
-                                    </div>
-                                </div>
+                            <div v-if="!visible3" class="flex items-center lg:transform lg:-translate-y-[166px]">
+                                <img src="/public/icon-reply.svg" alt="" class="mx-auto">
+                                <button @click="visible3 = true" class="text-num p-2">
+                                    Reply
+                                </button>
                             </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <!-- Carte de commentaire avec l'input -->
-                <div v-if="showEditCard" class="text-textdes bg-white mt-4 px-4 py-4 rounded-xl z-30 lg:flex lg:gap-4 lg:ml-24">
-                    <!-- Avatar en premier sur lg -->
-                    <div
-                        class="flex items-center lg:order-1 translate-y-36 lg:translate-y-0 lg:flex lg:items-start lg:justify-start">
-                        <img src="/public/avatars/image-juliusomo.png" alt="" class="h-8 w-8 lg:w-auto">
-                    </div>
+                            <div v-else class="flex flex-col items-center lg:transform lg:-translate-y-[166px]">
+                                <div class="flex items-center">
+                                    <img src="/public/icon-delete.svg" alt="">
+                                    <button class="p-2 text-sup">
+                                        Delete
+                                    </button>
+                                    <img src="/public/icon-edit.svg" alt="" class="pl-3">
+                                    <button class="p-2 text-num ">
+                                        Edit
+                                    </button>
+                                </div>
 
-                    <!-- Input en deuxième sur lg -->
-                    <div class="lg:order-2 w-full">
-                        <textarea placeholder="Add a comment..." class="w-full rounded-xl h-24 pl-4 border pb-10"
-                            v-model="text">
-                        </textarea>
-                    </div>
 
-                    <!-- Bouton en dernier sur lg -->
-                    <div
-                        class="flex items-center pt-4 lg:order-3 float-right lg:justify-start lg:items-start lg:-translate-y-3">
-                        <button class="text-white bg-num py-3 px-8 rounded-lg" @click="sendComment">
-                            SEND
-                        </button>
-                    </div>
-                </div>
+                            </div>
 
-                <!-- Zone où le message envoyé sera affiché -->
-                <div v-if="commentSent" class="mt-4 p-4 bg-white rounded-lg">
-                    <p>{{ text }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -435,9 +300,10 @@
 
                 <!-- Input en deuxième sur lg -->
 
-                <div class="lg:order-2 w-full gap-4">
 
-                    <textarea placeholder="Add a comment..." class="w-full rounded-xl h-24 pl-4 border pb-10">
+                <div class="lg:order-2 w-full ">
+
+                    <textarea placeholder="Add a comment..." class="w-full rounded-xl h-24 pl-4 border pb-10 ">
 
                     </textarea>
 
