@@ -417,7 +417,7 @@
                 </div>
             </div>
 
-            <div class="text-textdes bg-white mt-4 px-4 py-4 rounded-xl z-30 lg:flex ">
+            <div class="text-textdes bg-white mt-4 px-4 py-4 rounded-xl z-30 lg:flex lg:gap-4">
                 <!-- Avatar en premier sur lg -->
                 <div
                     class="flex items-center lg:order-1 translate-y-36 lg:translate-y-0 lg:flex lg:items-start lg:justify-start">
@@ -425,7 +425,7 @@
                 </div>
 
                 <!-- Input en deuxième sur lg -->
-                <div class="lg:order-2 w-full lg:pr-5 lg:pl-5">
+                <div class="lg:order-2 w-full ">
                     <textarea placeholder="Add a comment..." class="w-full rounded-xl h-24 pl-4 border pb-10 ">
                     </textarea>
                 </div>
